@@ -437,7 +437,7 @@ void plugin_persist__handle_will_delete(struct mosquitto *context)
 
 	opts = &db.config->security_options;
 	DL_FOREACH_SAFE(opts->plugin_callbacks.persist_will_delete, cb_base, cb_next){
-		cb_base->cb(MOSQ_EVT_PERSIST_WILL_ADD, &event_data, cb_base->userdata);
+		cb_base->cb(MOSQ_EVT_PERSIST_WILL_DELETE, &event_data, cb_base->userdata);
 	}
 
 }
